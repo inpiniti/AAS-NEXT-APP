@@ -14,7 +14,9 @@
     "prisma install client": "npm install @prisma/client",
     "prisma migrate": "npx prisma migrate dev --name init",
     "prisma generate": "npx prisma generate",
-    "prisma migrate tags": "npx prisma migrate dev --name tags-model"
+    "prisma migrate tags": "npx prisma migrate dev --name tags-model",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
@@ -38,10 +40,19 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/blocks": "^7.0.18",
+    "@storybook/nextjs": "^7.0.18",
+    "@storybook/react": "^7.0.18",
+    "@storybook/testing-library": "0.0.14-next.2",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-storybook": "^0.6.12",
     "prettier": "2.8.8",
-    "prisma": "^4.14.1"
+    "prisma": "^4.14.1",
+    "storybook": "^7.0.18"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
