@@ -24,12 +24,13 @@ export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [accessToken, setAccessToken] = useState<IUserInfo>();
   
-  const { status, data, error } = useQuery<any[]>('login', fetchLogin, {
+  // 로그인 요청 후 받은 값을 me 로 저장
+  const { status, data, error } = useQuery<any[]>('me', fetchLogin, {
     enabled: !!isLoggedIn,
     onSuccess: () => {
       setIsKakaoCertificationing(false)
       setIsLoggedIn(false);
-      router.push('/vessel');
+      router.push('catenax/vessel');
     },
   });
 
@@ -43,33 +44,20 @@ export default function Login() {
     return response.json();
   }
 
+  // 카카오에서 정상 로그인 처리 후 동작
   const handleLogin = (data: any) => {
       setIsLoggedIn(true);
       setAccessToken(data.response.access_token);
-
-      // access token 으로 서버에 login 요청
-      /* const res = fetch('http://localhost:3000/api/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          access_token: data.response.access_token,
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
-        // next 13 인증 후 메인화면으로
-        router.push('/vessel');
-      })
-      .catch(err => {
-        console.error(err)
-        router.push('/');
-      }) */
   };
+
+  // 카카오에서 로그아웃 처리 후 동작
   const handleLogout = () => {
       setIsLoggedIn(false);
   };
 
   /* const { status, data, error } = useQuery("todos", fetchLogin); */
 
+  // 
   if (status === "error") {
     if (error instanceof Error) {
       return <span>Error: {error.message}</span>;

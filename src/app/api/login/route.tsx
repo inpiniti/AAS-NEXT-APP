@@ -65,7 +65,11 @@ export async function POST(request: Request) {
         await prisma.$disconnect()
       })
 
-    return NextResponse.json({ state: state });
+    return NextResponse.json({
+      ...data.kakao_account.profile,
+      access_token: access_token,
+      email: data.kakao_account.email,
+    });
 }
 
 // 회원 조회

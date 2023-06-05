@@ -1,5 +1,8 @@
+"use client"
+
 import { Inter } from 'next/font/google';
 import Header from './header';
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,11 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-white`}>
-        <Header />
-        {children}
-      </body>
-    </html>
+    <>
+      <Header />
+      {children}
+    </>
   );
 }
