@@ -1,8 +1,6 @@
-"use client"
-
 import { Inter } from 'next/font/google';
 import Header from './header';
-import { ReactQueryDevtools } from "react-query/devtools";
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 const inter = Inter({ subsets: ['latin'] });
 
