@@ -1,9 +1,7 @@
-"use client"
-
 import './globals.css';
 import { Inter } from 'next/font/google';
 
-import ReactQueryProvider from "./reactQueryProvider";
+import ReactQueryProvider from './reactQueryProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
