@@ -3,18 +3,3890 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model User {
-  email         String  @unique
-  access_token  String?
+model financials {
+  symbolCode         String? 
+  date                String? 
+  change_stock_price_rate Int?
+  change_financial_rate Int?
+
+  @@ignore
 }
 
-model Aas {
-  idShort       String
-  catalogue     String?
-  id            String  @unique
-  data          String?
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model history {
+  name   String?   @db.VarChar(1000)
+  date   DateTime? @db.Timestamp(0)
+  reason Bytes?    @db.Blob
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220506 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220509 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220510 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220511 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220512 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220513 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220516 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220517 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220518 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220519 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220520 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220523 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220524 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220525 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220526 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220527 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220530 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220531 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220602 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220603 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220607 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220608 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220609 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220610 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220613 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220614 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220615 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220616 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220617 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220620 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220621 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220622 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220623 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220624 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220627 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220628 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220629 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220630 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220701 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220704 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220705 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220706 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220707 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220708 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220711 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220712 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220713 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220714 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220715 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220718 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220719 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220720 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220721 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220722 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220725 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220726 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220727 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220728 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220729 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220801 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220802 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220803 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220804 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220805 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220808 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220809 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220810 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220811 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220812 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220823 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220824 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220825 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20220826 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221007 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221024 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221025 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221026 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221027 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221028 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221031 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221101 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221102 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221103 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221104 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221107 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221108 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221109 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221110 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221111 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221114 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221115 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221116 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221117 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221118 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221121 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221122 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221123 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221124 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221125 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221128 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221129 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221130 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221201 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221202 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221205 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221206 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221207 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221208 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221209 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221212 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221213 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221214 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221215 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221216 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221219 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221220 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221221 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221222 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221223 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221226 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221227 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20221228 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230104 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230105 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230106 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230109 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230110 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230111 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230112 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230113 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230116 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230117 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230118 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230119 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230120 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230123 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230124 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230125 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230126 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230127 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230130 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230131 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230201 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230202 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230203 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230206 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230207 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230208 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230209 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230210 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230213 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230214 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230215 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230216 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230217 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230220 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230221 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230222 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230223 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230224 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230227 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230228 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230301 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230302 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230303 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230306 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230307 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230308 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230309 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230310 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230313 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230314 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230315 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230316 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230317 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230320 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230321 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230322 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230323 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230324 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230327 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230328 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230330 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230331 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230403 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230404 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230417 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230418 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230419 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230420 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230421 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230424 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230425 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230426 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230427 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230428 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230501 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230502 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230503 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230504 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230505 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230508 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230509 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230510 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230511 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230512 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230515 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230516 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230517 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230518 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230519 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230522 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230523 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230524 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230525 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230526 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230529 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230530 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230531 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230601 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230602 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230605 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230606 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230607 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230608 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230609 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230612 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230613 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230614 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230615 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230616 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230619 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230620 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230621 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230622 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230623 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230626 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model investing20230627 {
+  createTime    DateTime? @db.Timestamp(0)
+  current       Int?
+  high          Int?
+  low           Int?
+  changePrice   Int?
+  changeRate    Float?    @db.Float
+  tradingVolume BigInt?
+  tradeTime     String?   @db.VarChar(10)
+  score         Int?
+  stock         String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model isu {
+  ISU_ABBRV  String? @db.VarChar(100)
+  ISU_SRT_CD String? @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model stock {
+  currentTime                  DateTime? @db.Timestamp(0)
+  symbolCode                   String?   @db.VarChar(7)
+  code                         String?   @db.VarChar(12)
+  openingPrice                 String?   @db.VarChar(10)
+  highPrice                    Int?
+  lowPrice                     Int?
+  tradePrice                   Int?
+  prevClosingPrice             Int?
+  change                       String?   @db.VarChar(20)
+  changePrice                  Int?
+  changeRate                   String?   @db.VarChar(20)
+  name                         String?   @db.VarChar(20)
+  date                         DateTime? @db.Date
+  tradeDate                    String?   @db.VarChar(8)
+  exchangeDate                 DateTime? @db.Timestamp(0)
+  market                       String?   @db.VarChar(10)
+  accTradePrice                Int?
+  accTradeVolume               Int?
+  prevAccTradeVolume           Int?
+  prevAccTradeVolumeChangeRate String?   @db.VarChar(20)
+  marketCap                    Int?
+  high52wPrice                 String?   @db.VarChar(20)
+  high52wDate                  DateTime? @db.Date
+  low52wPrice                  String?   @db.VarChar(20)
+  low52wDate                   DateTime? @db.Date
+  upperLimitPrice              String?   @db.VarChar(20)
+  lowerLimitPrice              String?   @db.VarChar(20)
+  foreignRatio                 String?   @db.VarChar(20)
+  parValue                     String?   @db.VarChar(20)
+  eps                          Int?
+  dps                          Int?
+  per                          String?   @db.VarChar(20)
+  bps                          Int?
+  pbr                          String?   @db.VarChar(20)
+  sectorName                   String?   @db.VarChar(20)
+  wicsSectorName               String?   @db.VarChar(20)
+  wicsSectorChangeRate         String?   @db.VarChar(20)
+  listedShareCount             String?   @db.VarChar(20)
+  sectorPer                    String?   @db.VarChar(20)
+  highInYearPrice              String?   @db.VarChar(20)
+  lowInYearPrice               String?   @db.VarChar(20)
+  capitalStock                 String?   @db.VarChar(20)
+  bidPrice                     Int?
+  askPrice                     Int?
+
+  @@ignore
 }
