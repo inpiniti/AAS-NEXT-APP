@@ -38,19 +38,44 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient()
 
+const MARKET = 'KOSPI';
+// const MARKET = 'KOSDAQ';
+
+let INDUSTRIES : {
+  symbolCode: string
+  sectorName: string
+  market: string
+};
+let STOCKCODE: {
+  code: string
+  symbolCode: string
+  name: string
+};
+
 export async function GET(request: Request) {
+  console.log(`get ${request.url}`);
   try {
     // 업종 리스트 가져오기
-    const industriesCodes: Array<string> = await getIndustries();
+    const industriess: Array<{
+      symbolCode: string
+      sectorName: string
+      market: string
+    }> = await getIndustries();
     
     // 업종별 종목 리스트
-    for (const industriesCode of industriesCodes) {
+    for (const [index_industri, industries] of industriess.entries()) {
       const stockCodes: Array<{
-        code: string,
-        symbolCode: string,
-      }> = await getStockCodes(industriesCode);
+        code: string
+        symbolCode: string
+        name: string
+      }> = await getStockCodes(industries.symbolCode);
+      INDUSTRIES = industries;
 
-      for (const stockCode of stockCodes) {
+      for (const [index_stock, stockCode] of stockCodes.entries()) {
+        console.log(`--------------------------------------------------------------------------------------------------------------------------`);
+        console.log(`(${index_industri}) ${industries.sectorName} : ${industries.symbolCode}, (${index_stock}) ${stockCode.name} : ${stockCode.code}`);
+        STOCKCODE = stockCode;
+
         await calculateRateOfChangeAndDbInsert(stockCode)
       }
     }
@@ -71,6 +96,8 @@ const calculateRateOfChangeAndDbInsert = async (stockCode: {
   symbolCode: string,
 }) => {
   const {code: standardItemCode, symbolCode} = stockCode;
+  console.log(`--------------------------------------------------------------------------------------------------------------------------`);
+  console.log(`(재무재표 비즈니스 로직) calculateRateOfChangeAndDbInsert(${standardItemCode}, ${symbolCode})`);
   // 재무제표 가져오기
   const financialStatements = await getFinancialStatements(symbolCode);
 
@@ -134,6 +161,7 @@ const calculateRateOfChangeAndDbInsert = async (stockCode: {
 // "debtRatio": 236.53, // 부채비율 (%)
 // "dividendPerShare": 50 // 주당배당금 (원)
 const getFinancialStatements = async (symbolCode: string) => {
+  console.log(`(daum)(재무재표 데이터 가져오기) getFinancialStatements(${symbolCode})`);
   let url = `https://finance.daum.net/api/quote/${symbolCode}/financials`;
   let headers = {
     Referer: 'https://finance.daum.net/domestic/sectors',
@@ -142,7 +170,6 @@ const getFinancialStatements = async (symbolCode: string) => {
   const jsonData = await response.json();
   return jsonData
 }
-
 
 // 연간 데이터 변화율구하기
 const rateChange = (financial: any) => {
@@ -160,6 +187,7 @@ const rateChange = (financial: any) => {
   let current_date = '';
 
   const quarters_output = quarters_sort.map(quarter => {
+    console.log(`(연간 데이터 변화율구하기) rateChange.quarters_output(${Object.values(quarter).join()})`);
     current_netIncom = before_netIncome;
     before_netIncome = quarter.netIncome;
 
@@ -197,6 +225,7 @@ const sort = (quarters: any) => {
 
 // 표준종목코드로 월별 시세 가져오기
 const getMonthlyQuotes = async (isuCd: string, strtYymm: string, endYymm: string) => {
+  console.log(`(krx)(표준종목코드로 월별 시세 가져오기) getMonthlyQuotes(${isuCd}, ${strtYymm}, ${endYymm})`);
   let url = `http://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd?bld=dbms/MDC/STAT/standard/MDCSTAT01802&isuCd=${isuCd}&strtYymm=${strtYymm}&endYymm=${endYymm}`;
   const response = await fetch(url);
   const jsonData = await response.json();
@@ -257,6 +286,7 @@ const addStockQuote = (stocks: Array<{
   AVG_ACC_TRDVAL: string
 }>) => {
   return stocks.map(stock => {
+    console.log(`(주식 시세 추가)(addStockQuote) addStockQuote.stock(${Object.values(stock).join()})`);
     const monthlyQuotesCopy = monthlyQuotes
       .filter(monthlyQuote => 
         monthlyQuote.TRD_DD >= stock.date.replaceAll('-','/').substring(0, 7) &&
@@ -282,6 +312,7 @@ const addStockQuote = (stocks: Array<{
 
 // 자산 등록
 async function create(data: any) {
+  console.log(`(db에 자산 등록) create(${Object.values(data).join()})`);
   await prisma.financials.create({
     data: data,
   })
@@ -290,6 +321,7 @@ async function create(data: any) {
 
 // db 조회
 async function find({symbolCode = '', date = ''}) {
+  console.log(`(db 조회) find(${symbolCode}, ${date})`);
   const users = await prisma.financials.findMany({
     where: {
       symbolCode,
@@ -301,17 +333,25 @@ async function find({symbolCode = '', date = ''}) {
 
 // 업종 리스트 가져오기
 const getIndustries = async () => {
-  let url = `https://finance.daum.net/api/sectors/?includedStockLimit=2&page=1&perPage=40&fieldName=changeRate&order=desc&market=KOSPI&change=RISE&includeStocks=true&pagination=true`;
+  console.log(`(daum)(업종 리스트 가져오기) getIndustries()`);
+  let url = `https://finance.daum.net/api/sectors/?includedStockLimit=2&page=1&perPage=40&fieldName=changeRate&order=desc&market=${MARKET}&change=RISE&includeStocks=true&pagination=true`;
   let headers = {
     Referer: 'https://finance.daum.net/domestic/sectors',
   };
   const response = await fetch(url, { headers });
   const jsonData = await response.json();
-  return jsonData.data.map((d: any) => d.symbolCode)
+  return jsonData.data.map((d: any) => {
+    return {
+      symbolCode: d.symbolCode,
+      sectorName: d.sectorName,
+      market: d.market,
+    }
+  })
 }
 
 // 종목 리스트 가져오기
 const getStockCodes = async (symbolCode: string) => {
+  console.log(`(daum)(종목 리스트 가져오기) getStockCodes(${symbolCode})`);
   let url = `https://finance.daum.net/api/sectors/${symbolCode}/includedStocks?symbolCode=KRD020020180&page=1&perPage=30&fieldName=changeRate&order=desc&pagination=true`;
   let headers = {
     Referer: 'https://finance.daum.net/domestic/sectors',
@@ -319,10 +359,11 @@ const getStockCodes = async (symbolCode: string) => {
   const response = await fetch(url, { headers });
   const jsonData = await response.json();
   return jsonData.includedStocks.map((included: any) => {
-    const {code, symbolCode} = included
+    const {code, symbolCode, name} = included
     return {
       code,
       symbolCode,
+      name,
     }
   })
 }
